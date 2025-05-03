@@ -1,3 +1,5 @@
+import 'package:calculadora_imc/nucli/app_colors.dart';
+import 'package:calculadora_imc/pantalles/pantalla_inici.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +11,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        backgroundColor: AppColors.fons,
+        appBar:
+          AppBar(
+            backgroundColor: AppColors.primary,
+            title: Text("Calculadora IMC")),
+        body: PantallaInici(),
       ),
     );
   }

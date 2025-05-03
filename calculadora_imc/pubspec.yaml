@@ -1,5 +1,5 @@
 name: calculadora_imc
-description: "A new Flutter project."
+description: "Calculadora d'Índex de Massa Corporal"
 publish_to: 'none'
 version: 0.1.0
 
@@ -17,3 +17,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  # Recursos
+  assets:
+    - imatges/
