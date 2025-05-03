@@ -17,7 +17,10 @@ class MainApp extends StatelessWidget {
         appBar:
           AppBar(
             backgroundColor: AppColors.primary,
-            title: Text("Calculadora IMC")),
+            title: Text("Calculadora IMC"),
+            foregroundColor: AppColors.textModeOscur,
+            centerTitle: true,
+          ),
         body: PantallaInici(),
       ),
     );
