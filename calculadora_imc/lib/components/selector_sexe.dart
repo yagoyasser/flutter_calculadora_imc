@@ -29,40 +29,38 @@ class _SelectorSexeState extends State<SelectorSexe> {
                 }
               });
             },
-            child: Padding(
-              padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingGran, right: Paddings.paddingPetit, bottom: Paddings.paddingPetit),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: sexeSeleccionat == "Mascle"
-                    ? AppColors.fonsComponentSeleccionat
-                    : AppColors.fonsComponent,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  // L'ideal seria obtindre la mida més gran entre l'alt i l'ample, sumar-li els padding i aplicar eixa nova mida al valor més menut d'entre l'alt i l'ample
-                  // En aquest cas, com es pot establir les mides de les imatges, paddings i texts, no és estrictament necessari fer-ho així
-                  // A més, com en aquest cas s'implementa Expanded, dona igual ja que Expanded té una mida major que la del Padding
-                  padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingPetit, right: Paddings.paddingGran),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        "imatges/mascle.png",
-                        height: 100,
+            child: Container(
+              decoration: BoxDecoration(
+                color: sexeSeleccionat == "Mascle"
+                  ? AppColors.fonsComponentSeleccionat
+                  : AppColors.fonsComponent,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Padding(
+                // L'ideal seria obtindre la mida més gran entre l'alt i l'ample, sumar-li els padding i aplicar eixa nova mida al valor més menut d'entre l'alt i l'ample
+                // En aquest cas, com es pot establir les mides de les imatges, paddings i texts, no és estrictament necessari fer-ho així
+                // A més, com en aquest cas s'implementa Expanded, dona igual ja que Expanded té una mida major que la del Padding
+                padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingPetit, right: Paddings.paddingGran),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "imatges/mascle.png",
+                      height: 100,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
+                      child: Text(
+                        "Mascle",
+                        style: EstilsTexts.textClar,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
-                        child: Text(
-                          "Mascle",
-                          style: EstilsTexts.textClar,
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
             ),
           ),
         ),
+        SizedBox(width: 8),
         Expanded(
           child: GestureDetector(
             onTap: () {
@@ -74,36 +72,32 @@ class _SelectorSexeState extends State<SelectorSexe> {
                 }
               });
             },
-            child: Padding(
-              padding: EdgeInsets.only(left: Paddings.paddingPetit, top: Paddings.paddingGran, right: Paddings.paddingGran, bottom: Paddings.paddingPetit
+            child: Container(
+              decoration: BoxDecoration(
+                color: sexeSeleccionat == "Femella"
+                  ? AppColors.fonsComponentSeleccionat
+                  : AppColors.fonsComponent,
+                borderRadius: BorderRadius.circular(12),
               ),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: sexeSeleccionat == "Femella"
-                    ? AppColors.fonsComponentSeleccionat
-                    : AppColors.fonsComponent,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  // L'ideal seria obtindre la mida més gran entre l'alt i l'ample, sumar-li els padding i aplicar eixa nova mida al valor més menut d'entre l'alt i l'ample
-                  // En aquest cas, com es pot establir les mides de les imatges, paddings i texts, no és estrictament necessari fer-ho així
-                  // A més, com en aquest cas s'implementa Expanded, dona igual ja que Expanded té una mida major que la del Padding
-                  padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingPetit, right: Paddings.paddingGran),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        "imatges/femella.png",
-                        height: 100,
+              child: Padding(
+                // L'ideal seria obtindre la mida més gran entre l'alt i l'ample, sumar-li els padding i aplicar eixa nova mida al valor més menut d'entre l'alt i l'ample
+                // En aquest cas, com es pot establir les mides de les imatges, paddings i texts, no és estrictament necessari fer-ho així
+                // A més, com en aquest cas s'implementa Expanded, dona igual ja que Expanded té una mida major que la del Padding
+                padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingPetit, right: Paddings.paddingGran),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "imatges/femella.png",
+                      height: 100,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
+                      child: Text(
+                        "Femella",
+                        style: EstilsTexts.textClar,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
-                        child: Text(
-                          "Femella",
-                          style: EstilsTexts.textClar,
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
             ),

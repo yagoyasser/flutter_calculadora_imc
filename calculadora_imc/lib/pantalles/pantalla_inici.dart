@@ -1,4 +1,6 @@
+import 'package:calculadora_imc/components/boto_continuar.dart';
 import 'package:calculadora_imc/components/selector_altura.dart';
+import 'package:calculadora_imc/components/selector_numero.dart';
 import 'package:calculadora_imc/components/selector_sexe.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +12,56 @@ class PantallaInici extends StatefulWidget {
 }
 
 class _PantallaIniciState extends State<PantallaInici> {
+  int pes = 75;
+  int edat = 27;
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SelectorSexe(),
-        SelectorAltura(),
-      ]
+    return Padding(
+      padding: EdgeInsets.all(16),
+      child: Column(
+        children: [
+          SelectorSexe(),
+          SizedBox(height: 8),
+          SelectorAltura(),
+          SizedBox(height: 8),
+          Row(
+            children: [
+              SelectorNumero(
+                titol: "Pes",
+                valorInicial: pes,
+                alDecrementar: () {
+                  setState(() {
+                    pes--;
+                  });
+                },
+                alIncrementar: () {
+                  setState(() {
+                    pes++;
+                  });
+                },
+              ),
+              SizedBox(width: 8),
+              SelectorNumero(
+                titol: "Edat",
+                valorInicial: edat,
+                alDecrementar: () {
+                  setState(() {
+                    edat--;
+                  });
+                },
+                alIncrementar: () {
+                  setState(() {
+                    edat++;
+                  });
+                },
+              )
+            ],
+          ),
+          Spacer(),
+          BotoContinuar()
+        ]
+      ),
     );
   }
 }
