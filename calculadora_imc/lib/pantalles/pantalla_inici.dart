@@ -1,3 +1,4 @@
+import 'package:calculadora_imc/components/selector_altura.dart';
 import 'package:calculadora_imc/components/selector_sexe.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class _PantallaIniciState extends State<PantallaInici> {
     return Column(
       children: [
         SelectorSexe(),
+        SelectorAltura(),
       ]
     );
   }

@@ -30,7 +30,7 @@ class _SelectorSexeState extends State<SelectorSexe> {
               });
             },
             child: Padding(
-              padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingGran, right: Paddings.paddingPetit, bottom: Paddings.paddingGran),
+              padding: EdgeInsets.only(left: Paddings.paddingGran, top: Paddings.paddingGran, right: Paddings.paddingPetit, bottom: Paddings.paddingPetit),
               child: Container(
                 decoration: BoxDecoration(
                   color: sexeSeleccionat == "Mascle"
@@ -53,7 +53,7 @@ class _SelectorSexeState extends State<SelectorSexe> {
                         padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
                         child: Text(
                           "Mascle",
-                          style: EstilsTexts.cosText,
+                          style: EstilsTexts.textClar,
                         ),
                       )
                     ],
@@ -75,7 +75,8 @@ class _SelectorSexeState extends State<SelectorSexe> {
               });
             },
             child: Padding(
-              padding: EdgeInsets.only(left: Paddings.paddingPetit, top: Paddings.paddingGran, right: Paddings.paddingGran, bottom: Paddings.paddingGran),
+              padding: EdgeInsets.only(left: Paddings.paddingPetit, top: Paddings.paddingGran, right: Paddings.paddingGran, bottom: Paddings.paddingPetit
+              ),
               child: Container(
                 decoration: BoxDecoration(
                   color: sexeSeleccionat == "Femella"
@@ -98,7 +99,7 @@ class _SelectorSexeState extends State<SelectorSexe> {
                         padding: EdgeInsets.symmetric(vertical: Paddings.paddingPetit),
                         child: Text(
                           "Femella",
-                          style: EstilsTexts.cosText,
+                          style: EstilsTexts.textClar,
                         ),
                       )
                     ],
