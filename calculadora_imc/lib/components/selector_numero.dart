@@ -45,6 +45,7 @@ class _SelectorNumeroState extends State<SelectorNumero> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FloatingActionButton(
+                    heroTag: null, // S'ha de declarar perquè l'aplicació no es trenque quan es canvia de pantalla, ja que hi ha dos elements Hero amb la mateixa etiqueta (tag)
                     backgroundColor: AppColors.fons,
                     foregroundColor: Colors.white,
                     shape: CircleBorder(),
@@ -58,6 +59,7 @@ class _SelectorNumeroState extends State<SelectorNumero> {
                     width: 8,
                   ),
                   FloatingActionButton(
+                    heroTag: null, // S'ha de declarar perquè l'aplicació no es trenque quan es canvia de pantalla, ja que hi ha dos elements Hero amb la mateixa etiqueta (tag)
                     backgroundColor: AppColors.fons,
                     foregroundColor: Colors.white,
                     shape: CircleBorder(),

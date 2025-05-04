@@ -12,6 +12,7 @@ class PantallaInici extends StatefulWidget {
 }
 
 class _PantallaIniciState extends State<PantallaInici> {
+  int altura = 175;
   int pes = 75;
   int edat = 27;
 
@@ -23,7 +24,14 @@ class _PantallaIniciState extends State<PantallaInici> {
         children: [
           SelectorSexe(),
           SizedBox(height: 8),
-          SelectorAltura(),
+          SelectorAltura(
+            altura: altura,
+            alCanviarAltura: (novaAltura) {
+              setState(() {
+                altura = novaAltura;
+              });
+            }
+          ),
           SizedBox(height: 8),
           Row(
             children: [
@@ -59,7 +67,7 @@ class _PantallaIniciState extends State<PantallaInici> {
             ],
           ),
           Spacer(),
-          BotoContinuar()
+          BotoContinuar(altura: altura, pes: pes)
         ]
       ),
     );

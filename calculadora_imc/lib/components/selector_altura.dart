@@ -3,14 +3,20 @@ import 'package:calculadora_imc/nucli/estils_texts.dart';
 import 'package:flutter/material.dart';
 
 class SelectorAltura extends StatefulWidget {
-  const SelectorAltura({super.key});
+  final int altura;
+  final Function(int) alCanviarAltura;
+
+  SelectorAltura({
+    super.key,
+    required this.altura,
+    required this.alCanviarAltura,
+  });
 
   @override
   State<SelectorAltura> createState() => _SelectorAlturaState();
 }
 
 class _SelectorAlturaState extends State<SelectorAltura> {
-  double altura = 175;
   double alturaMin = 125;
   double alturaMax = 225;
 
@@ -33,15 +39,13 @@ class _SelectorAlturaState extends State<SelectorAltura> {
                     style: EstilsTexts.textClar,
                   ),
                   Text(
-                    "${altura.toInt()} cm",
+                    "${widget.altura.toInt()} cm",
                     style: EstilsTexts.textClarGran,
                   ),
                   Slider(
-                    value: altura,
-                    onChanged: (valor) {
-                      setState(() {
-                        altura = valor;
-                      });
+                    value: widget.altura.toDouble(),
+                    onChanged: (novaAltura) {
+                      widget.alCanviarAltura(novaAltura.toInt());
                     },
                     min: alturaMin,
                     max: alturaMax,
