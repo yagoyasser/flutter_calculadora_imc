@@ -10,18 +10,8 @@ class EstilsTexts {
     fontSize: 16,
   );
 
-  static const TextStyle textClarGran = TextStyle(
-    color: Colors.white,
-    fontSize: 32,
-  );
-
   static const TextStyle textFosc = TextStyle(
     color: Colors.black,
     fontSize: 16,
-  );
-
-  static const TextStyle textFoscGran = TextStyle(
-    color: Colors.black,
-    fontSize: 32,
   );
 }

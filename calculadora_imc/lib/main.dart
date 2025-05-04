@@ -1,3 +1,4 @@
+import 'package:calculadora_imc/components/appbar_scaffolds.dart';
 import 'package:calculadora_imc/nucli/app_colors.dart';
 import 'package:calculadora_imc/pantalles/pantalla_inici.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: AppColors.fons,
-        appBar:
-          AppBar(
-            backgroundColor: AppColors.primary,
-            title: Text("Calculadora IMC"),
-            foregroundColor: Colors.white,
-            centerTitle: true,
-          ),
+        appBar: AppbarScaffolds(titol: "Calculadora IMC"),
         body: PantallaInici(),
       ),
     );

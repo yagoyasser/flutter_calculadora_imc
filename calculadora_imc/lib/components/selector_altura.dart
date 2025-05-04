@@ -40,7 +40,9 @@ class _SelectorAlturaState extends State<SelectorAltura> {
                   ),
                   Text(
                     "${widget.altura.toInt()} cm",
-                    style: EstilsTexts.textClarGran,
+                    style: EstilsTexts.textClar.copyWith(
+                      fontSize: 32
+                    ),
                   ),
                   Slider(
                     value: widget.altura.toDouble(),
@@ -51,7 +53,7 @@ class _SelectorAlturaState extends State<SelectorAltura> {
                     max: alturaMax,
                     divisions: (alturaMax - alturaMin).toInt(),
                     activeColor: AppColors.primary,
-                    // label: "${altura.toInt()}"
+                    // label: "${altura.toInt()}" Mostraria, dalt del cursor del Lliscador el valor que té: no cal implementar-ho ja que s'està mostrant a altre lloc
                   )
                 ],
               ),

@@ -27,19 +27,21 @@ class _SelectorNumeroState extends State<SelectorNumero> {
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.fonsComponent,
-          borderRadius: BorderRadius.circular(12)
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Column(
             children: [
               Text(
-                "${widget.titol}",
+                widget.titol,
                 style: EstilsTexts.textClar
               ),
               Text(
                 widget.valorInicial.toString(),
-                style: EstilsTexts.textClarGran,
+                style: EstilsTexts.textClar.copyWith(
+                  fontSize: 32
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

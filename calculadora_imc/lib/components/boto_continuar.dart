@@ -39,7 +39,9 @@ class _BotoContinuarState extends State<BotoContinuar> {
           },
           child: Text(
             "Continuar", 
-            style: EstilsTexts.textClarGran,
+            style: EstilsTexts.textClar.copyWith(
+              fontSize: 32
+            ),
           )
         ),
       ),
