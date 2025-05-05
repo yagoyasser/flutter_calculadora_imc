@@ -22,7 +22,7 @@ class _PantallaIniciState extends State<PantallaInici> {
       padding: EdgeInsets.all(16),
       child: Column(
         children: [
-          SelectorSexe(),
+          SelectorSexe(), // Estètic
           SizedBox(height: 8),
           SelectorAltura(
             altura: altura,
@@ -57,13 +57,13 @@ class _PantallaIniciState extends State<PantallaInici> {
                   setState(() {
                     edat--;
                   });
-                },
+                }, //
                 alIncrementar: () {
                   setState(() {
                     edat++;
                   });
                 },
-              )
+              ) // Estètic
             ],
           ),
           Spacer(),

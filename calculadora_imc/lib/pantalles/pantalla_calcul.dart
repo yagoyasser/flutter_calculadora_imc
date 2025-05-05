@@ -7,11 +7,7 @@ class PantallaCalcul extends StatelessWidget {
   final int altura;
   final int pes;
 
-  const PantallaCalcul({
-    super.key,
-    required this.altura,
-    required this.pes,
-  });
+  const PantallaCalcul({super.key, required this.altura, required this.pes});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +17,11 @@ class PantallaCalcul extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.fons,
       appBar: AppbarScaffolds(titol: "Resultat càlcul"),
-      body: cosScaffold(resultatCalcul),
+      body: cosScaffold(resultatCalcul, context),
     );
   }
 
-  Widget cosScaffold(double resultatCalcul) {
+  Widget cosScaffold(double resultatCalcul, BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(16),
       child: Column(
@@ -43,9 +39,7 @@ class PantallaCalcul extends StatelessWidget {
                   children: [
                     Text(
                       "El teu resultat",
-                      style: EstilsTexts.textClar.copyWith(
-                        fontSize: 32
-                      ),
+                      style: EstilsTexts.textClar.copyWith(fontSize: 32),
                     ),
                     Expanded(
                       child: Column(
@@ -65,7 +59,8 @@ class PantallaCalcul extends StatelessWidget {
                               fontWeight: FontWeight.w900,
                               color: obtindreColorPerIMC(resultatCalcul),
                             ),
-                          )
+                          ),
+                          // L'idea posar el gràfic/imatge del imc indicant on es localitza el resultat del càlcul sobre aquest, però inclòs amb l'ajuda de l'IA no ho he aconseguit
                         ],
                       ),
                     ),
@@ -83,40 +78,38 @@ class PantallaCalcul extends StatelessWidget {
                 backgroundColor: WidgetStateProperty.all(AppColors.primary),
               ),
               onPressed: () {
-                
+                Navigator.pop(context);
               },
               child: Text(
-                "Finalitzar", 
-                style: EstilsTexts.textClar.copyWith(
-                  fontSize: 32
-                ),
-              )
+                "Finalitzar",
+                style: EstilsTexts.textClar.copyWith(fontSize: 32),
+              ),
             ),
           ),
         ],
       ),
     );
   }
-  
+
   Color obtindreColorPerIMC(double imc) {
-    return switch(imc) {
+    return switch (imc) {
       < 18.50 => Colors.blue, // Pes baix
       < 24.99 => Colors.green, // Pes normal
       < 29.99 => Colors.yellow, // Sobrepes
       < 34.99 => Colors.orange, // Obesitat lleu
       < 39.99 => Colors.red, // Obesitat mitja
-      _ => Colors.purple // Obesitat mòrbida
+      _ => Colors.purple, // Obesitat mòrbida
     };
   }
 
   String obtindreTextPerIMC(double imc) {
-    return switch(imc) {
+    return switch (imc) {
       < 18.50 => "Pes baix",
       < 24.99 => "Pes normal",
       < 29.99 => "Sobrepes",
       < 34.99 => "Obesitat lleu",
       < 39.99 => "Obesitat mitja",
-      _ => "Obesitat mòrbida"
+      _ => "Obesitat mòrbida",
     };
   }
 }
